@@ -1,0 +1,33 @@
+plugins {
+    id 'flink-app-conventions'
+
+}
+
+dependencies {
+    runtimeOnly 'org.apache.logging.log4j:log4j-slf4j-impl:2.17.1'
+    runtimeOnly 'org.apache.logging.log4j:log4j-api:2.17.1'
+    runtimeOnly 'org.apache.logging.log4j:log4j-core:2.17.1'
+
+    // implementation 'org.apache.flink:flink-streaming-scala_2.12:1.18.0'
+    // is replaced by:
+    implementation 'com.ariskk:flink4s_2.13:1.15.2'
+    implementation 'io.findify:flink-adt_2.13:0.6.1'
+
+    implementation 'org.apache.flink:flink-connector-kafka:1.16.3'
+    runtimeOnly 'org.apache.flink:flink-clients:1.16.3'
+
+    runtimeOnly 'org.scala-lang:scala-library:2.13.12'
+    runtimeOnly 'org.scala-lang:scala-reflect:2.13.12'
+    runtimeOnly 'org.scala-lang:scala-compiler:2.13.12'
+}
+
+group = 'flink-pluralsight-course'
+version = '1.0.0'
+description = 'Processing Streaming Data with Apache Flink'
+
+shadowJar {
+}
+
+application {
+    mainClassName = 'com.pluralsight.flink.StreamingSquareRoots'
+}
