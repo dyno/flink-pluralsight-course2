@@ -25,8 +25,6 @@ kafka-consumer:
 kafka-consumer2:
 	$(KFK_CONSUMER) --topic $(TOPIC) --from-beginning
 
-PROJECT_BASE := /Users/dfu/gitroot/flink-pluralsight-course2
-
 kafka-client:
 	cp $(PROJECT_BASE)/build/libs/flink-pluralsight-course-1.0.0-all.jar conf/
 	$(KFK_CLIENT) flink run /opt/flink/conf/flink-pluralsight-course-1.0.0-all.jar
